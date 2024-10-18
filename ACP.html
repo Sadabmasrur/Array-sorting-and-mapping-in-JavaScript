@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Array Operations</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #result,
+      #product_value {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>JavaScript Array Sort</h2>
+      <p>Click the button to sort the array:</p>
+      <button onclick="ascending()">Ascending order</button>
+      <button onclick="descending()">Descending order</button>
+
+      <p id="result"></p>
+
+      <h2>Multiply Array and Sort</h2>
+      <p>Original array multiplied by 50, then sorted:</p>
+      <p id="product_value"></p>
+    </div>
+
+    <script>
+      var points = [40, 10, 1, 5, 25, 100];
+      document.getElementById("result").innerHTML = "Original array: " + points;
+
+      function ascending() {
+        points.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("result").innerHTML =
+          "Sorted array in ascending order: " + points;
+      }
+      function descending() {
+        points.sort(function (a, b) {
+          return b - a;
+        });
+        document.getElementById("result").innerHTML =
+          "Sorted array in descending order: " + points;
+      }
+      var numbers = [25, 11, 29, 94];
+
+      function myFunction(num) {
+        return num * 50;
+      }
+      var newarray = numbers.map(myFunction);
+      document.getElementById("product_value").innerHTML =
+        "The Mapped values are: " + newarray;
+
+      function ascendingProduct() {
+        newarray.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("product_value").innerHTML =
+          "The ascending order of mapped values are: " + newarray;
+      }
+      function descendingProduct() {
+        newarray.sort(function (a, b) {
+          return b - a;
+        });
+        document.getElementById("product_value").innerHTML =
+          "The descending order of mapped values are: " + newarray;
+      }
+    </script>
+  </body>
+</html>
